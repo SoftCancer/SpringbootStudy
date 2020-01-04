@@ -29,6 +29,7 @@
         <module>boot_config_3_lombok</module>
         <module>boot_config_4_async</module>
         <module>boot_config_5_swagger</module>
+        <module>boot_config_6_rabbitmq</module>
     </modules>
 
     <build>
