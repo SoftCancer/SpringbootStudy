@@ -83,8 +83,64 @@ server.port=${random.int(2048,99999)}
          }
      }
   
-  ## 使用注解 @Async 创建一个自定义线程池
-  
+## SpringBoot 整合Swagger2 
+1. 添加依赖包
 
+       <!-- swagger2 依赖包 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+
+ 2. 在application.properties 配置文件中添加配置
  
+        spring.swagger2.enabled=true
+
+
+ 3. 创建Swagger2 的配置类
+ 
+        /**
+         * 通过 @Configuration注解，让Spring来加载该类配置。
+         * 再通过 @EnableSwagger2注解来启用Swagger2。
+         * @description: 配置Swagger API
+         * @date: 2020/1/1 16:09
+         */
+        @Configuration
+        @EnableSwagger2
+        public class SwaggerConfig  {
+        
+            @Value(value = "${spring.swagger2.enabled}")
+            private Boolean swaggerEnable;
+        
+            @Bean
+            public Docket createSwaggerApi(){
+                return new Docket(DocumentationType.SWAGGER_2)
+                        // apiInfo()用来创建该Api的基本信息
+                        .apiInfo(apiInfo())
+                        .enable(swaggerEnable)
+                        // select()函数返回一个ApiSelectorBuilder实例用来控制哪些接口暴露给Swagger来展现，
+                        // 本例采用指定扫描的包路径来定义，Swagger会扫描该包下所有Controller定义的API
+                        .select()
+                        .apis(RequestHandlerSelectors.basePackage("com.dongl.boot_config_swagger"))
+                        .paths(PathSelectors.any())
+                        .build();
+            }
+        
+            private ApiInfo apiInfo(){
+                return new ApiInfoBuilder()
+                        .title("东朗教育网站API")
+                        .description("网站开发接口Api")
+                        .termsOfServiceUrl("192.168.1.107")
+                        .contact(new Contact("程序员Dongl","192.168.1.107","qq.com"))
+                        .version("1.0")
+                        .build();
+            }
+        }
+
  
