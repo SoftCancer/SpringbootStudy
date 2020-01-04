@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="boot" />
+        <module name="boot_config" />
+        <module name="boot_config_1_yml" />
+        <module name="boot_config_2_log" />
+        <module name="boot_config_3_lombok" />
+        <module name="boot_config_4_async" />
+        <module name="boot_config_5_swagger" />
+        <module name="boot_config_yml (2)" />
+      </profile>
+      <profile name="Annotation profile for boot" enabled="true">
+        <sourceOutputDir name="../boot_config_2_log/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../boot_config_2_log/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="boot_config_yml (1)" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="boot" target="1.8" />
+      <module name="boot_config" target="1.8" />
+      <module name="boot_config_1_yml" target="1.8" />
+      <module name="boot_config_2_log" target="1.8" />
+      <module name="boot_config_3_lombok" target="1.8" />
+      <module name="boot_config_4_async" target="1.8" />
+      <module name="boot_config_5_swagger" target="1.8" />
+      <module name="boot_config_yml (1)" target="1.8" />
+      <module name="boot_config_yml (2)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

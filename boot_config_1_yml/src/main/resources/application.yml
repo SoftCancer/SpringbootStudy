@@ -1,0 +1,9 @@
+#默认端口：8080，修改端口：9090
+#server:
+#  port: 9090
+# 修改为随机端口
+server:
+    port: ${random.int(1024,99999)}
+
+boot:
+  msg: hello,SpringBoot YML

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/boot.iml" filepath="$PROJECT_DIR$/boot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/boot_config/boot_config.iml" filepath="$PROJECT_DIR$/boot_config/boot_config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/boot_config_1_yml/boot_config_1_yml.iml" filepath="$PROJECT_DIR$/boot_config_1_yml/boot_config_1_yml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/boot_config_2_log/boot_config_2_log.iml" filepath="$PROJECT_DIR$/boot_config_2_log/boot_config_2_log.iml" />
+      <module fileurl="file://$PROJECT_DIR$/boot_config_3_lombok/boot_config_3_lombok.iml" filepath="$PROJECT_DIR$/boot_config_3_lombok/boot_config_3_lombok.iml" />
+      <module fileurl="file://$PROJECT_DIR$/boot_config_4_async/boot_config_4_async.iml" filepath="$PROJECT_DIR$/boot_config_4_async/boot_config_4_async.iml" />
+      <module fileurl="file://$PROJECT_DIR$/boot_config_5_swagger/boot_config_5_swagger.iml" filepath="$PROJECT_DIR$/boot_config_5_swagger/boot_config_5_swagger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/boot_config_1_yml/boot_config_yml (1).iml" filepath="$PROJECT_DIR$/boot_config_1_yml/boot_config_yml (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/boot_config_2_log/boot_config_yml (2).iml" filepath="$PROJECT_DIR$/boot_config_2_log/boot_config_yml (2).iml" />
+    </modules>
+  </component>
+</project>
