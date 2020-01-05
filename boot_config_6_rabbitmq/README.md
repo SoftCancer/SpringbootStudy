@@ -153,3 +153,97 @@ server.port=${random.int(2048,99999)}
             2.高内聚低耦合（解耦）
             3.流量削峰 （用于秒杀服务）
  
+ 3.实现流程
+ 
+    provider   ————  队列  ————  consumer
+    提供者              RabbitMQ           消费者
+ 
+ 4.在pom.xml 中添加依赖
+     
+        <!-- RabbitMq 的依赖jar -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+ 
+ 5.在application.properties 中进行配置
+      
+    #配置RabbitMQ 框架
+    spring.rabbitmq.host=192.168.1.107
+    spring.rabbitmq.port=5672
+    spring.rabbitmq.username=root
+    spring.rabbitmq.password=123456
+    
+ 6.程序实现流程：
+ 
+   6.1 声明队列配置类
+    
+    /**
+     * @description: 配置队列实例
+     * @date: 2020/1/5 15:23
+     */
+    @Configuration
+    public class QueueConfig {
+    
+        @Bean
+        public Queue queue(){
+            return new Queue("dongl_rabbirmq");
+        }
+    }
+ 
+   6.2 消息提供者
+    
+    /**
+     * @description: 消息提供者
+     * @date: 2020/1/5 15:22
+     */
+    @Component
+    public class Provider {
+    
+        //使用RabbitTemplate,这提供了接收/发送等等方法
+        @Autowired
+        RabbitTemplate rabbitTemplate;
+    
+    
+        public String  provider(){
+           SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+           // 向队列（dongl_rabbirmq）中提供（发送）消息
+            rabbitTemplate.convertAndSend("dongl_rabbirmq","Hello RabbitMQ"+ sdf.format(new Date()));
+            return "OK";
+        }
+    
+    }
+
+   6.3消息消费者
+    
+    /**
+     * @description: 消费者
+     * @date: 2020/1/5 16:02
+     */
+    @Component
+    public class Consumer {
+        // 监听队列消息
+        @RabbitListener(queues = "dongl_rabbirmq")
+        public void consumer(String msg){
+            System.out.println("consumer : " + msg);
+        }
+    }
+    
+ 6.4测试RabbitMQ 例子
+ 
+    @RunWith(SpringRunner.class)
+    @SpringBootTest(classes = BootConfigRabbitMQApplication.class)
+    public class BootConfigApplicationTests {
+    
+        @Autowired
+        Provider provider;
+    
+        @Test
+        public void provider() {
+            provider.provider();
+        }
+    }
+
+
+
+   

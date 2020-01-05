@@ -1,4 +1,4 @@
-package com.dongl.boot_config_swagger;
+package com.dongl.boot_config_rabbitmq;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BootConfigRabbitMQApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(BootConfigRabbitMQApplication.class, args);
     }
 
