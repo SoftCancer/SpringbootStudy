@@ -146,7 +146,7 @@ server.port=${random.int(2048,99999)}
  ## 安装RabbitMQ 
  1.已在本地服务器安装 RabbitMQ 
  
- 2. 为什么使用 RabbitMQ，它解决了什么问题？
+ 2.为什么使用 RabbitMQ，它解决了什么问题？
  
         RabbitMQ 解决三个问题： 
             1. 同步变异步
