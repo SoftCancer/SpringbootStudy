@@ -32,6 +32,7 @@
         <module>boot_config_5_swagger</module>
         <module>boot_config_6_rabbitmq</module>
         <module>boot_config_6_rabbitmq_direct</module>
+        <module>boot_config_6_rabbitmq_topic</module>
     </modules>
 
     <build>
