@@ -8,5 +8,6 @@
     <file url="file://$PROJECT_DIR$/boot_config_3_lombok" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/boot_config_4_async" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/boot_config_5_swagger" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/boot_config_6_rabbitmq" charset="UTF-8" />
   </component>
 </project>
