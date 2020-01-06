@@ -51,7 +51,6 @@ public class TopicProducer {
      * @Param  通过定时任务执行
      * @Date 22:40 2020/1/6
      **/
-    /*
     @Scheduled(cron="0/5 * * * * ? ")   //每5秒执行一次
     public void send() {
         DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -63,5 +62,4 @@ public class TopicProducer {
         // 向指定的交换机发送消息
         rabbitTemplate.convertAndSend(RabbitConfig.TOPIC_EXCHANGE,RabbitConfig.TOPIC_MESSAGES_KEY,msg);
     }
-    */
 }
