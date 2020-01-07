@@ -21,7 +21,7 @@ public class RabbitConfig {
      * @Date 18:19 2020/1/6
      **/
     // 队列routing key
-    public static final String TOPIC_MESSAGE_KEY = "topic.message";
+    public static final String TOPIC_MESSAGE_KEY = "topic.*";
     public static final String TOPIC_MESSAGES_KEY = "topic.#";
     // 交换机exchange
     public static final String TOPIC_EXCHANGE = "topicExchange";
@@ -62,7 +62,13 @@ public class RabbitConfig {
         return BindingBuilder.bind(topicQueueOne).to(exchangeTopic).with(TOPIC_MESSAGE_KEY);
     }
     /**
-     * 将队列 topic.& 与exchange绑定（&：任意字符串，均可匹配）， binding_key为topic.#,模糊匹配；
+     *
+     *  配置该消息队列的  routingKey
+     *  topic.* 匹配 第一个.后面的单词,代表 一个 单词
+     *  比如 topic.asd 会被该消息队列接受 topic.asd.dsf不会被该消息队列接受将队列 ;
+     *
+     *  topic.& 与exchange绑定（&：任意字符串，均可匹配）， binding_key为topic.#,模糊匹配；
+     *  比如 topic.asd 会被该消息队列接受 topic.asd.dsf也会被该消息队列接受
      * @Date 15:27 2020/1/6
      **/
     @Bean

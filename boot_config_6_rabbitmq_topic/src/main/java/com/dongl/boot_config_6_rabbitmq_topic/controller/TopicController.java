@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date: 2020/1/6 12:34
  */
 @RestController
-public class DirectController {
+public class TopicController {
 
     @Autowired
     private TopicProducer topicProducer;

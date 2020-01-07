@@ -249,5 +249,8 @@ server.port=${random.int(2048,99999)}
  
   ## 使用RabbitMQ 交换机的 topic模式
  
-
-   
+    a. 消息队列配置的 routingKey 是topic.#  意思是说开头是topic的全部都会匹配到该消息队列;
+    b. 消息队列配置的 routingKey 是topic.*   他只会匹配topic.后面有一个单词的，
+    如果有两个或者多个就会匹配不上该消息队列;
+    c. 消息队列配置的 routingKey* 设为topic.asd   等指定的其他字符，但是这样的话就和普通的Direct基本没什么区别;  亲测没效果，不知什么原因？
+    
