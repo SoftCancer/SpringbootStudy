@@ -33,6 +33,7 @@
         <module>boot_config_6_rabbitmq</module>
         <module>boot_config_6_rabbitmq_direct</module>
         <module>boot_config_6_rabbitmq_topic</module>
+        <module>boot_config_6_rabbitmq_fanout</module>
     </modules>
 
     <build>
