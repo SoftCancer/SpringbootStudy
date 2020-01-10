@@ -1,7 +1,6 @@
-package com.dongl.boot_config_8_exception.common;
+package com.dongl.boot_config_8_exception.common.exception;
 
 import com.dongl.boot_config_8_exception.enums.ResultCodeEunm;
-import com.google.common.base.Throwables;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

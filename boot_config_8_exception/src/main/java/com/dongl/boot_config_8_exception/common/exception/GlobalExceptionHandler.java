@@ -1,4 +1,4 @@
-package com.dongl.boot_config_8_exception.common;
+package com.dongl.boot_config_8_exception.common.exception;
 
 import com.dongl.boot_config_8_exception.enums.ResultCodeEunm;
 import lombok.extern.slf4j.Slf4j;
@@ -29,6 +29,21 @@ public class GlobalExceptionHandler {
       ErrorResult errorResult =  ErrorResult.fail(ResultCodeEunm.SYSTEM_ERROR,e);
       log.info("URL:{},系统异常;",request.getRequestURI(),e);
       return errorResult;
+    }
+
+    /**
+     * 处理自定义异常
+     * @Author YaoGuangXun
+     * @Date 22:25 2020/1/10
+     **/
+    @ExceptionHandler(CustomException.class)  // 处理某一类异常
+    public ErrorResult handleCustomException(CustomException e, HttpServletRequest request){
+        ErrorResult errorResult = ErrorResult.builder().status(e.code)
+                .msg(e.msg)
+                .exception(e.getClass().getName())
+                .build();
+        log.warn("URL:{},业务异常:{};",request.getRequestURI(),errorResult);
+        return errorResult;
     }
 
 }

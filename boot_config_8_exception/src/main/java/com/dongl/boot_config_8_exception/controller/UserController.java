@@ -1,7 +1,9 @@
 package com.dongl.boot_config_8_exception.controller;
 
-import com.dongl.boot_config_8_exception.common.Result;
+import com.dongl.boot_config_8_exception.common.exception.CustomException;
+import com.dongl.boot_config_8_exception.common.response.Result;
 import com.dongl.boot_config_8_exception.entity.UserEntity;
+import com.dongl.boot_config_8_exception.enums.ResultCodeEunm;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,18 +25,15 @@ public class UserController {
         return Result.success(user);
     }
 
-    @GetMapping("/users")
-    public UserEntity getUsers(){
-        UserEntity user = new UserEntity();
-        user.setAge(33);
-        user.setId("1234");
-        user.setName("Albert");
-        return user;
-    }
 
     @GetMapping("/getStr")
     public String getStr(){
 
         return "Hello SpringBoot !";
+    }
+
+    @GetMapping("/custom")
+    public void custom() {
+        throw new CustomException(ResultCodeEunm.USER_EXISTED);
     }
 }

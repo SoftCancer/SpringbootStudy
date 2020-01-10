@@ -1,4 +1,4 @@
-package com.dongl.boot_config_8_exception.common;
+package com.dongl.boot_config_8_exception.common.response;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;

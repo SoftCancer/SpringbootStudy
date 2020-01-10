@@ -1,4 +1,4 @@
-package com.dongl.boot_config_8_exception.common;
+package com.dongl.boot_config_8_exception.common.response;
 
 import com.dongl.boot_config_8_exception.enums.ResultCodeEunm;
 import lombok.AllArgsConstructor;
