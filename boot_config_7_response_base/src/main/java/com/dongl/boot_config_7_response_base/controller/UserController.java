@@ -22,4 +22,19 @@ public class UserController {
         user.setName("Albert");
         return Result.success(user);
     }
+
+    @GetMapping("/users")
+    public UserEntity getUsers(){
+        UserEntity user = new UserEntity();
+        user.setAge(33);
+        user.setId("1234");
+        user.setName("Albert");
+        return user;
+    }
+
+    @GetMapping("/getStr")
+    public String getStr(){
+
+        return "Hello SpringBoot !";
+    }
 }
