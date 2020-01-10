@@ -13,7 +13,7 @@ server.port=${random.int(2048,99999)}
 
 一般的response 的返回格式包含3部分：
     
-    1. status：状态值，代表请求的状态结果
+    1.status：状态值，代表请求的状态结果
     2.response:描述，对本次状态码的描述
     3.data：数据，本次返回的数据
     {
@@ -21,4 +21,6 @@ server.port=${random.int(2048,99999)}
         "desc":"成功",
         "data"："success"
     }
+   
+实现基础版数据返回格式 
     
