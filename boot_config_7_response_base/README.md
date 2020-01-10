@@ -105,3 +105,6 @@ server.port=${random.int(2048,99999)}
 
 
 ### 2.beforeBodyWrite 方法体中做判断。
+
+优化后的统一返回标准包含：CommonResponseDataAdvice.java ,Result.java ,
+ResultCodeEunm 三个类。
