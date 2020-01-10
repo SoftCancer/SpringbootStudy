@@ -43,6 +43,9 @@ public class Result<T> {
         return result;
     }
 
+    /**
+     * 失败，指定status，desc
+     **/
     public static Result fail(Integer status,String desc){
         Result result = new Result();
         result.setStatus(status);

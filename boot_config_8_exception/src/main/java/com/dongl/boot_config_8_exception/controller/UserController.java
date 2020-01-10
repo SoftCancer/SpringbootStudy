@@ -5,6 +5,7 @@ import com.dongl.boot_config_8_exception.common.response.Result;
 import com.dongl.boot_config_8_exception.entity.UserEntity;
 import com.dongl.boot_config_8_exception.enums.ResultCodeEunm;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
