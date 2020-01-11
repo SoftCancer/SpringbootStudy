@@ -42,4 +42,9 @@ public class UserController {
            return userService.getUserById(id);
     }
 
+    @RequestMapping(value = "/name/{name}",method = RequestMethod.GET)
+    public User getUserByName(@PathVariable String name){
+           return userService.getUserByName(name);
+    }
+
 }

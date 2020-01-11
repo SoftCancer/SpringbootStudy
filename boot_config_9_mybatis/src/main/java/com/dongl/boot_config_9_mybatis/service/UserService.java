@@ -28,5 +28,9 @@ public class UserService {
        return userMapper.selectByPrimaryKey(id);
     }
 
+    public User getUserByName(String name){
+       return userMapper.getUserByName(name);
+    }
+
 
 }
