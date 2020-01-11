@@ -36,6 +36,7 @@
         <module>boot_config_6_rabbitmq_fanout</module>
         <module>boot_config_7_response_base</module>
         <module>boot_config_8_exception</module>
+        <module>boot_config_9_mybatis</module>
     </modules>
 
     <build>
