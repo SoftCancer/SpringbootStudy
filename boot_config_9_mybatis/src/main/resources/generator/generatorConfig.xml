@@ -8,6 +8,13 @@
     <!-- 引入配置文件 -->
     <!-- defaultModelType="flat" 设置复合主键时不单独为主键创建实体 -->
     <context id="MySql" targetRuntime="MyBatis3" defaultModelType="flat">
+        <!-- 生成的Java文件的编码 -->
+        <property name="javaFileEncoding" value="utf-8" />
+        <!-- 格式化java代码 -->
+        <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
+        <!-- 格式化XML代码 -->
+        <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
+
         <!-- 生成的POJO实现java.io.Serializable接口 -->
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
         <!--添加自定义的继承接口-->
