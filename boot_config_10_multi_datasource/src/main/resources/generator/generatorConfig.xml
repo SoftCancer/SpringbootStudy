@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
     <!-- 引入配置文件 -->
-    <properties resource="application.properties"/>
+    <!--<properties resource="application.properties"/>-->
 
 
     <!-- 引入配置文件,配置多数据源Master  -->
