@@ -37,6 +37,7 @@
         <module>boot_config_7_response_base</module>
         <module>boot_config_8_exception</module>
         <module>boot_config_9_mybatis</module>
+        <module>boot_config_10_multi_datasource</module>
     </modules>
 
     <build>
