@@ -38,6 +38,7 @@
         <module>boot_config_8_exception</module>
         <module>boot_config_9_mybatis</module>
         <module>boot_config_10_multi_datasource</module>
+        <module>boot_config_11_druid</module>
     </modules>
 
     <build>
