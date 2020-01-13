@@ -25,7 +25,7 @@ import javax.sql.DataSource;
 @Configuration
 @EnableConfigurationProperties
 @MapperScan(basePackages = "com.dongl.boot_config_10_multi_datasource.dao.slave",
-        sqlSessionTemplateRef = "masterSqlSessionTemplate")
+        sqlSessionTemplateRef = "slaveSqlSessionTemplate")
 public class MybatisSlaveConfiguration {
 
     // slave 数据库配置文件前缀
