@@ -15,6 +15,7 @@ server.port=${random.int(2048,99999)}
 ```aidl
 spring.datasource.druid.slave.type=com.alibaba.druid.pool.DruidDataSource
 ```
+
 2.修改配置文件，新增druid 关键字
 ```aidl
 spring.datasource.druid.master.type=com.alibaba.druid.pool.DruidDataSource
@@ -24,6 +25,8 @@ spring.datasource.druid.master.password=123456
 spring.datasource.druid.master.max-wait-millis=10000
 ```
 注：druid 连接池需要改 :spring.datasource.druid.master.jdbc-url --> spring.datasource.druid.master.url
+
+
 3.修改数据源配置类 MybatisMasterConfiguration.java 和 MybatisSlaveConfiguration.java 类中的方法：
 ```aidl
 
@@ -37,5 +40,5 @@ spring.datasource.druid.master.max-wait-millis=10000
     }
 
 ```
-
+把 DataSourceBuilder.create().build();  改为：new DruidDataSource(); 
 
