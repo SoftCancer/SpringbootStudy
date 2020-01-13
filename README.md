@@ -2,7 +2,7 @@
 渐进式学习SpringBoot
 
 本项目属于一个父模块包含若干个子模块。
-个子模块功能说明：
+各子模块功能说明：
 
 ### 模块5： boot_config_5_swagger2 实现SpringBoot 对 Swagger 框架的整合
 
@@ -36,4 +36,4 @@
 
 
 
-### 模块12：boot_config_12_redis 实现SpringBoot 整合Redis
+### 模块13：boot_config_13_redis 实现SpringBoot 整合Redis
