@@ -9,6 +9,100 @@ server.port=9090
 server.port=${random.int(2048,99999)}
 
 ## 在boot_config_9_mybatis 的基础上配置 多数据源
+
+### 步骤0：创建表数据库及表
+1.数据库名：SpringBootMaster
+```aidl
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for capital_account
+-- ----------------------------
+DROP TABLE IF EXISTS `capital_account`;
+CREATE TABLE `capital_account` (
+  `id` varchar(32) NOT NULL COMMENT '唯一 id',
+  `user_id` varchar(32) NOT NULL COMMENT '用户id',
+  `balance_amount` decimal(10,0) DEFAULT '0' COMMENT '账户余额',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='账户信息表';
+
+-- ----------------------------
+-- Records of capital_account
+-- ----------------------------
+INSERT INTO `capital_account` VALUES ('38be0128e4f747eea0bd88c2ad37d2f7', '38be0128e4f747eea0bd88c2ad37d0f7', '2000', '2020-01-13 13:03:44', '2020-01-13 13:03:44');
+
+-- ----------------------------
+-- Table structure for user
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` varchar(32) NOT NULL,
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(20) DEFAULT NULL,
+  `sex` tinyint(4) DEFAULT '0' COMMENT '性别：女：0，男：1',
+  `deleted` tinyint(4) DEFAULT '0' COMMENT '删除标识：0：不删除，1：删除',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户表';
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+INSERT INTO `user` VALUES ('38be0128e4f747eea0bd88c2ad37d0f7', 'Albert3', '123456', '0', '0', '2020-01-11 15:39:18', '2020-01-11 15:39:18');
+
+``` 
+2.数据库名：SpringBootSlave
+
+```aidl
+Date: 2020-01-14 12:46:30
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for red_packet_account
+-- ----------------------------
+DROP TABLE IF EXISTS `red_packet_account`;
+CREATE TABLE `red_packet_account` (
+  `id` varchar(32) NOT NULL COMMENT '唯一 id',
+  `user_id` varchar(32) NOT NULL COMMENT '用户id',
+  `balance_amount` decimal(10,0) DEFAULT '0' COMMENT '账户余额',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='红包账户信息表';
+
+-- ----------------------------
+-- Records of red_packet_account
+-- ----------------------------
+INSERT INTO `red_packet_account` VALUES ('57b49d1f64f94aca9b634d3d70f796a8', '57b49d1f64f94aca9b634d3d70f797a8', '1000', '2020-01-14 04:03:42', '2020-01-14 04:03:42');
+
+-- ----------------------------
+-- Table structure for user
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` varchar(32) NOT NULL,
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(20) DEFAULT NULL,
+  `sex` tinyint(4) DEFAULT '0' COMMENT '性别：女：0，男：1',
+  `deleted` tinyint(4) DEFAULT '0' COMMENT '删除标识：0：不删除，1：删除',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户表';
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+INSERT INTO `user` VALUES ('57b49d1f64f94aca9b634d3d70f797a8', 'Albert9', '123456', '1', '0', '2020-01-11 15:39:18', '2020-01-11 15:39:18');
+```
+
+注：上边两个数据库只是测试 代码自动生成器，其他暂未使用。
+
 ### 步骤1： 配置application.properties 文件
 1.添加多数据源的配置
 注意：在SpringBoot1.0 配置数据源的过程中主要是写成：spring.datasource.url 和spring.datasource.driverClassName。
