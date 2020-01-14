@@ -1,19 +1,15 @@
 package com.dongl.boot_config_12_atomikos.config;
 
-import com.alibaba.druid.pool.DruidDataSource;
 import com.atomikos.jdbc.AtomikosDataSourceBean;
 import com.mysql.jdbc.jdbc2.optional.MysqlXADataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import tk.mybatis.spring.annotation.MapperScan;
 
 import javax.sql.DataSource;
@@ -51,7 +47,7 @@ public class MybatisMasterConfiguration {
     public DataSource masterDataSource(MasterConfig masterConfig) throws Exception{
 //        使用Druid的分布式驱动，暂时发现不支持MySql8以上的版本
 //        DruidXADataSource druidXADataSource = new DruidXADataSource();
-//        BeanUtils.copyProperties(firstDataSourceProperties, druidXADataSource);
+//        BeanUtils.copyProperties(masterConfig, druidXADataSource);
 
         //使用mysql的分布式驱动，支持MySql5.*、MySql8.* 以上版本
         MysqlXADataSource mysqlXADataSource = new MysqlXADataSource();
