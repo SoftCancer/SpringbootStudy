@@ -82,6 +82,13 @@
             <artifactId>spring-boot-starter-jta-atomikos</artifactId>
         </dependency>
 
+        <!-- tx + aop -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.4</version>
+        </dependency>
+
         <!-- 自定义的元数据依赖 -->
         <dependency>
            <groupId>org.springframework.boot</groupId>
