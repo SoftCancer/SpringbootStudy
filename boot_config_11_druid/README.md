@@ -103,3 +103,22 @@ http://localhost:9090/druid/api.html
 username:druid
 password:123456
 ```
+
+## 测试多数据源的数据变动操作
+```aidl
+        访问：http://localhost:9090/pay
+
+    @RequestMapping(value = "/pay",method = RequestMethod.GET)
+    public String pay(){
+        payService.pay("38be0128e4f747eea0bd88c2ad37d0f7","57b49d1f64f94aca9b634d3d70f797a8",20);
+        return "Success Save！";
+    }
+
+```
+1.主要测试的是从一个库中的账户表 向另一个库中的 红包表转账，
+在无异常的情况下，账户表会减少相应的金额，红包表会增加相应的金额。
+
+但在出现异常的情况下，会出现数据的不一致性，现象：账户表为减少金额但红包表却增加了。
+
+此种错误属于事务问题，将在下节boot_config_12_atomikos 中进行全局事务处理。
+用atomikos 框架进行全局事务管理。

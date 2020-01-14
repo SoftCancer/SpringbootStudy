@@ -38,11 +38,13 @@ public class UserController {
         return "ok";
     }
 
+    // http://localhost:9090/get/49e7f897fd0b44699ff2eb7a37138879
     @RequestMapping(value = "/get/{id}",method = RequestMethod.GET)
     public User getUserById(@PathVariable String id){
            return userService.getUserById(id);
     }
 
+    // http://localhost:9090/name/Albert3
     @RequestMapping(value = "/name/{name}",method = RequestMethod.GET)
     public User getUserByName(@PathVariable String name){
            return userService.getUserByName(name);
