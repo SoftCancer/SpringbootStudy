@@ -17,6 +17,10 @@ server.port=${random.int(2048,99999)}
         <artifactId>spring-boot-starter-data-redis</artifactId>
         <version>1.5.0.RELEASE</version>
     </dependency>
+    <dependency>
+        <groupId>redis.clients</groupId>
+        <artifactId>jedis</artifactId>
+    </dependency>
 ```
 ### 步骤2： 配置application.properties 文件
 ```aidl
