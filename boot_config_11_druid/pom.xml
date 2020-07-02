@@ -19,7 +19,7 @@
         <java.version>1.8</java.version>
 
         <mapper.version>4.1.5</mapper.version>
-        <mysql_connector.version>5.1.46</mysql_connector.version>
+        <mysql_connector.version>8.0.16</mysql_connector.version>
     </properties>
 
     <dependencies>
@@ -53,7 +53,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.46</version>
+            <version>8.0.16</version>
         </dependency>
         <!-- 包含Mybatis与spring的整合，事物 -->
         <dependency>
